@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Babatunde Junior | WDD 330 – Web Fronted Development 2">
+        <meta name="author" content="Babatunde Junior">
+        <meta property="og:title" content="Rate IQ">
+        <meta property="og:description" content="Your trusted tool for accurate currency conversions">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="">
+        <title>Rate IQ</title>
+        <link rel="icon" href="src/icons/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+        <link rel="stylesheet" href="/src/style.css">  
+    </head>
+<body>
+
+<!-- Header / Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" >
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+      <span class="fs-4 me-1">$</span> Rate IQ
+    </a>
+
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navMenu"
+            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="history.html">Conversions</a></li>
+
+        <!-- dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false">
+            Quick Links
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#why">Why Use Rate IQ</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Container -->
+<div class="container my-4">
+
+  <!-- Converter Card -->
+  <div class="card p-3 shadow-sm">
+    <h5 class="text-center fw-bold mb-3">Currency Converter</h5>
+    
+    <form id="converterForm" class="row g-3 align-items-end">
+      <!-- Amount -->
+      <div class="col-12 col-lg-3">
+        <label for="amount" class="form-label">Amount</label>
+        <input type="number" class="form-control" id="amount" placeholder="$1.00" min="0" step="0.01" />
+      </div>
+
+      <!-- From Currency -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <label for="fromCurrency" class="form-label">From</label>
+        <select class="form-select" id="fromCurrency"></select>
+      </div>
+
+
+<!-- Swap -->
+<div id="swapBtn" class="col-12 col-lg-1 text-center d-flex align-items-center justify-content-center"
+     role="button" tabindex="0">
+  <!-- Vertical (mobile) -->
+  <span class="fs-4 d-lg-none">⇅</span>
+  <!-- Horizontal (desktop) -->
+  <span class="fs-4 d-none d-lg-inline">↔</span>
+</div>
+
+      <!-- To Currency -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <label for="toCurrency" class="form-label">To</label>
+        <select class="form-select" id="toCurrency"></select>
+      </div>
+
+      <!-- Convert Button -->
+      <div class="col-12 col-lg-2 d-grid">
+        <button id="convertBtn" class="btn btn-primary rounded-pill">Convert</button>
+      </div>
+    </form>
+
+    <!-- Result -->
+    <div class="row mt-3">
+      <div class="col-12 col-lg-6 text-center text-lg-start">
+        <div id="result" class="my-3">
+          <!-- Live rate and conversion will appear here -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Live Exchange Rates -->
+<div class="card mt-4 p-3 shadow-sm">
+  <h5 class="text-center fw-bold mb-3">Live Exchange Rates</h5>
+
+  <!-- Base currency selector -->
+  <div class="row mb-3">
+    <div class="col-md-4 mx-auto">
+      <label for="baseCurrency" class="form-label">Base Currency</label>
+      <select id="baseCurrency" class="form-select"></select>
+    </div>
+  </div>
+
+  <!-- Rates list -->
+  <ul id="liveRatesList" class="list-group list-group-flush"></ul>
+</div>
+
+
+<!-- Finance & Currency News -->
+<section class="mt-5">
+  <h4 class="fw-bold">Latest Currency & Finance News</h4>
+  <div id="newsList" class="row g-3"></div>
+</section>
+
+<!-- Why Use Rate IQ -->
+<section class="container my-5" id="why">
+  <h3 class="fw-bold">What is Rate IQ's Currency Converter?</h3>
+  <p>
+    Rate IQ's Currency Converter allows you to check the latest foreign exchange
+    rates for all major world currencies. We gather accurate data from trusted global
+    market sources to ensure you get real-time, reliable rates.
+  </p>
+
+  <h3 class="fw-bold mt-4">How to use Rate IQ's Currency Converter</h3>
+  <p>
+    Simply type your amount, select the base and target currencies, and click
+    convert. Rate IQ supports 3-letter ISO currency codes, and 
+    even country-based currency selections. Convert major and minor world currencies with data going back decades.
+  </p>
+
+  <h3 class="fw-bold mt-4">Why use Rate IQ's Currency Converter?</h3>
+
+  <div class="feature-item d-flex align-items-start mt-3">
+    <img src="src/icons/accurate.png" alt="Credible and accurate" class="me-3" width="40">
+    <div>
+      <h5>Credible and Accurate</h5>
+      <p class="mb-0">
+        We use direct access to real-time FX rates, ensuring that the data is always
+        accurate and trustworthy.
+      </p>
+    </div>
+  </div>
+
+  <div class="feature-item d-flex align-items-start mt-3">
+    <img src="src/icons/trusted.png" alt="Trusted provider" class="me-3" width="40">
+    <div>
+      <h5>Trusted Provider</h5>
+      <p class="mb-0">
+        Our rates are used by major corporations, financial institutions, and
+        individuals worldwide.
+      </p>
+    </div>
+  </div>
+
+  <div class="feature-item d-flex align-items-start mt-3">
+    <img src="src/icons/history.png" alt="Years of FX Data" class="me-3" width="40">
+    <div>
+      <h5>Years of FX Data</h5>
+      <p class="mb-0">
+        Access decades of historical currency data, covering over 200 currencies.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class=" pt-5 pb-3 mt-5">
+  <div class="container">
+    <div class="row">
+      
+      <!-- Brand -->
+      <div class="col-md-4 mb-4">
+        <h4 class="fw-bold">Rate IQ</h4>
+        <p>
+          Your trusted tool for accurate currency conversions, live rates, and
+          financial news all in one place.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2 mb-4">
+        <h6 class="fw-bold">Quick Links</h6>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class=" ">Home</a></li>
+          <li><a href="history.html" class="">Conversion History</a></li>
+          <li><a href="#newsList" class=" ">News</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-3 mb-4">
+        <h6 class="fw-bold">Contact Us</h6>
+        <p>Email: support@rateiq.com</p>
+        <p>Phone: +1 234 567 890</p>
+      </div>
+
+      <!-- Social -->
+      <div class="col-md-3 mb-4">
+        <h6 class="fw-bold">Follow Us</h6>
+        <a href="#" class=" me-3"><i class="bi bi-facebook fs-5"></i></a>
+        <a href="#" class=" me-3"><i class="bi bi-twitter fs-5"></i></a>
+        <a href="#" class=" me-3"><i class="bi bi-instagram fs-5"></i></a>
+        <a href="#" class=" me-3"><i class="bi bi-linkedin fs-5"></i></a>
+      </div>
+
+    </div>
+
+    <hr class="border-dark">
+    <div class="text-center">
+      <small>&copy; <span id="year"></span> Rate IQ. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+
+
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

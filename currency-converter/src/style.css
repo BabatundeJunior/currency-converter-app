@@ -1,0 +1,163 @@
+:root{
+  --lavender:#B3A1DD; 
+  --white:#fff; 
+  --light:#F8F9FA; 
+  --black:#000;
+}
+*{
+  font-family: Nunito;
+}
+
+body{ 
+  margin: 5px;
+  background:var(--light); 
+  color:var(--black); 
+}
+nav, footer {
+  background-color:#B3A1DD;
+}
+/* Navbar links default style */
+.navbar a {
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block; /* needed for transform */
+}
+
+/* Zoom-out effect on hover */
+.navbar a:hover {
+  transform: scale(0.80); /* zooms out slightly */
+}
+nav a, footer a {
+  color: var(--black);
+  text-decoration: none;
+}
+.container-fluid a {
+  color: var(--black);
+}
+.navbar-toggler-icon {
+  color: var(--black);
+}
+/* Bootstrap tune */
+.btn-primary{ background:var(--lavender); border-color:var(--lavender); color: var(--black);}
+.btn-primary:hover{ filter:brightness(.93); }
+.card{ background:var(--white); }
+.rounded-4{ border-radius: 14px; }
+
+/* Pill title */
+.title-pill{
+  border:2px solid #00000055;
+  border-radius: 999px;
+  background: var(--white);
+}
+
+/* Swap embellishment (tiny dot above arrow on desktop, just for style) */
+#swapBtn {
+  cursor:pointer;
+}
+.swap-dot{
+  width:8px; height:8px; 
+  border-radius:50%;
+  background:#00000088; 
+  margin-inline:auto;
+}
+
+/* Result styles */
+.conversion-result .fs-4{ color:#5a4aa0; } /* deeper purple accent */
+
+/* Live Rates Section */
+#ratesTableBody td {
+  font-weight: 500;
+}
+#ratesTableBody tr:hover {
+  background-color: #f4f2fb;
+}
+/* Live list rows */
+#liveRatesList .rate-row{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items:center;
+  gap:16px;
+  padding:14px 12px;
+}
+#liveRatesList .rate-row:nth-child(even){ background:#f6f6fb; }
+
+.rate-name{
+  display:flex; align-items:center; gap:10px; font-weight:700;
+}
+.rate-flag{
+  width:24px; height:18px; border-radius:3px; object-fit:cover;
+  box-shadow:0 0 0 1px rgba(0,0,0,.08);
+}
+
+
+/* Live Rates styling */
+.rate-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rate-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.rate-flag {
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.rate-value {
+  font-weight: 500;
+}
+
+.rate-change {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.rate-change.up {
+  color: green;
+}
+.rate-change.down {
+  color: red;
+}
+
+
+.news-card {
+  margin: 5px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+.news-card:hover {
+  transform: scale(1.02);
+}
+.news-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+.news-card .p-2 {
+  font-size: 0.9rem;
+}
+
+.feature-item img {
+  flex-shrink: 0;
+  width: 100px;
+}
+
+.feature-item h5 {
+  font-weight: bold;
+}
+
+.feature-item p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
