@@ -194,7 +194,7 @@ async function updateLiveRatesUI(base) {
 
 
 // News Section Logic
-const GNEWS_KEY = '829272e61dda83d016bbdb7fcf95edd5';
+const GNEWS_KEY = 'e15f005adae23c3b0f06a3cba42bc88a';
 const GNEWS_URL = `https://gnews.io/api/v4/search?q=currency&lang=en&country=us&max=5&apikey=${GNEWS_KEY}`;
 async function loadNews() {
   try {
