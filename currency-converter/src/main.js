@@ -1,5 +1,5 @@
 
-const API_KEY = import.meta.env.VITE_EXCHANGE_RATE_API_KEY; 
+const API_KEY = '2121d7e9de829ef950331e93'; 
 const API_URL = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/`;
 
 const fromCurrency = document.getElementById("fromCurrency");
@@ -194,7 +194,7 @@ async function updateLiveRatesUI(base) {
 
 
 // News Section Logic
-const GNEWS_KEY = import.meta.env.VITE_GNEWS_API_KEY;
+const GNEWS_KEY = '18bcc9a285965be9fcaf07f57b24bb8e';
 const GNEWS_URL = `https://gnews.io/api/v4/search?q=currency&lang=en&country=us&max=5&apikey=${GNEWS_KEY}`;
 async function loadNews() {
   try {
