@@ -30,8 +30,7 @@ async function loadCurrencies() {
   }
 }
 
-// 2Convert currency
-// 2) Convert currency  (patched: also saves to localStorage)
+// 2Convert currency and save to local storage
 async function convertCurrency(e) {
   if (e) e.preventDefault();
 
@@ -52,8 +51,8 @@ async function convertCurrency(e) {
       return;
     }
 
-    const result = amount * rate;              // keep number for history
-    const display = result.toFixed(2);         // format for UI
+    const result = amount * rate;              
+    const display = result.toFixed(2);         
 
     resultDiv.innerHTML = `
       <div class="conversion-result">
@@ -62,7 +61,7 @@ async function convertCurrency(e) {
       </div>
     `;
 
-    // SAVE to localStorage (this was missing)
+    // SAVE to localStorage 
     saveToHistory({
       amount,
       from: fromCurrency.value,
@@ -105,8 +104,7 @@ swapBtn.addEventListener('keydown', (e) => {
 });
 
 
-// ===== CONFIG =====
-/* ========= Live Rates (no charts) ========= */
+/* ========= Live Rates ========= */
 const LATEST_URL = (base) => `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${base}`;
 
 const MAJORS = [
@@ -228,7 +226,7 @@ async function loadNews() {
 
 loadNews();
 
-// ---- Conversion History (LocalStorage) ----
+//  Conversion History (LocalStorage) 
 const LS_KEY = 'conversionHistory_v1';
 
 function readHistory() {
@@ -240,7 +238,7 @@ function writeHistory(items) {
   localStorage.setItem(LS_KEY, JSON.stringify(items));
 }
 
-/** Save one successful conversion */
+/** To save successful conversions */
 function saveToHistory({ amount, from, to, rate, result }) {
   const items = readHistory();
   items.push({

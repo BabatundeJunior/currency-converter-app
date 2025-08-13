@@ -35,7 +35,7 @@ function renderHistory() {
   });
 }
 
-// 🆕 Clear history
+// Clear history
 function clearHistory() {
   localStorage.removeItem(LS_KEY);
   renderHistory();
